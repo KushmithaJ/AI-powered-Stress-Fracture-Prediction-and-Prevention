@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthopedics Login</title>
+    <style>
+        body {
+            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-013.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .nav { 
+            width: 25%; 
+            display: flex; 
+            justify-content: center; 
+            padding: 11px 0; 
+            position: absolute; 
+            left: 10px;
+            top: 0; 
+            animation: slideInLeft 1.5s ease;
+        } 
+        .nav button { 
+            background-color: #fcfcfc; 
+            color: rgb(245, 3, 3); 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s, transform 0.3s;
+        } 
+        .nav button:hover { 
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: popIn 1.5s ease-in-out;
+        }
+        input[type="text"], input[type="password"] {
+            width: 97%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: border-color 0.5s, transform 0.3s;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #66afe9;
+            transform: scale(1.02);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #dd0e0e;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #06680b;
+            transform: scale(1.05);
+        } 
+        .links {
+            margin-top: 10px;
+            animation: fadeInUp 1.5s ease;
+        }
+        .links a {
+            text-decoration: none;
+            color: #046b07;
+            display: block;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            text-decoration: underline;
+            color: #034d04;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        function openNextPage(event) {
+            event.preventDefault();
+            window.open('10-02-2025.html');
+        }
+    </script>
+</head>
+<body>
+    <div class="nav"> 
+        <button onclick="window.location.href='index.html';">Home</button> 
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/-submitlogin" method="post" onsubmit="openNextPage(event)">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="links"> 
+            <a href="forgot-password.html">Forgot password</a> 
+            <a href="sign-up.html">Create an account? Sign up</a>
+        </div>
+    </div>
+</body>
+</html>

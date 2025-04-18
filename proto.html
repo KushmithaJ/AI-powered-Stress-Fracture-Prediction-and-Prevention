@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Powered Stress Fracture Prediction and Prevention</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.elixirmuscle.com/wp-content/uploads/2022/11/Stress-Fractures.jpg'); 
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 5px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Powered Stress Fracture Prediction and Prevention</h1>
+        <input type="number" id="age" placeholder="Age" min="1">
+        <input type="number" id="height" placeholder="Height (cm)" min="1">
+        <input type="number" id="weight" placeholder="Weight (kg)" min="1">
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function calculateBMI() {
+            var age = document.getElementById('age').value;
+            var height = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+            var gender = document.getElementById('gender').value;
+            var resultDiv = document.getElementById('result');
+
+            if (age < 18) {
+                resultDiv.innerHTML = "Not eligible";
+                return;
+            }
+
+            if (gender !== "male" && gender !== "female") {
+                resultDiv.innerHTML = "Please select a valid gender";
+                return;
+            }
+
+            var heightInMeters = height / 100;
+            var bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
+
+            var riskAssessment = "";
+            if (bmi < 18.5) {
+                riskAssessment = "High chance of fracture (Risk Assessment: 70%)";
+            } else if (bmi >= 18.5 && bmi < 25) {
+                riskAssessment = "Less chance of fracture (Risk Assessment: 20%)";
+            } else {
+                riskAssessment = "High chance of fracture (Risk Assessment: 50%)";
+            }
+
+            resultDiv.innerHTML = "Your BMI is " + bmi + ". " + riskAssessment;
+        }
+    </script>
+</body>
+</html>
